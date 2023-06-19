@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.container{
+    display: flex;
+    width: 200px;
+}
+
+.screen {
+    width: 150px;
+    height: 150px;
+}
+
+.image{
+    width: 100%;
+}
+
+.image:hover{
+    cursor: pointer;
+}
+
+button{
+    background: none;
+    border: none;
+    color: white;
+}
+
+button:hover:enabled{
+    cursor: pointer;
+    background-color: rgba(255,255,255, 0.1);
+}
+
+button:disabled{
+    color: gray;
+}
+
+.zoom{
+    position: absolute;
+    opacity: 1;
+}
