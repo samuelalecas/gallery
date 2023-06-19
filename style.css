@@ -15,6 +15,11 @@ body {
 .screen {
     width: 150px;
     height: 150px;
+    clip-path: inset(0px 0px 0px 0px);
+}
+
+.carousel{
+    display: flex;
 }
 
 .image{
