@@ -20,6 +20,10 @@ body {
 
 .carousel{
     display: flex;
+    position: absolute;
+    height: 150px;
+    width: 450px;
+    -webkit-transition: left 0.7s cubic-bezier(.42,0,.35,1);
 }
 
 .image{
