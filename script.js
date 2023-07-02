@@ -17,6 +17,15 @@ function createCarousel(array) {
         image.src = "./img/" + array[index];
         image.setAttribute("id", index);
 
+
+        // Pulsar para hacer zoom en imagen
+        image.addEventListener("click", () => {
+            if(image.className === 'visible'){
+                zoomIn(image);
+            }
+        })
+
+
         // Definir estilos de imagenes 
         if (index == 0) {
             image.classList.add("visible");
@@ -104,6 +113,23 @@ function moveCarousel(direction) {
     currentImage.classList.replace("visible", "hidden");
     followingImage.classList.replace("hidden", "visible");
     updateCarouselPosition(displacement * direction);
+}
+
+// Zoom
+function zoomIn(image) {
+    let zoomDiv = document.createElement("div");
+    let container = document.querySelector(".container");
+    zoomDiv.classList.add("zoomed");
+    let zoomedImage = document.createElement("img");
+    zoomedImage.src = image.src;
+    zoomDiv.append(zoomedImage);
+
+    zoomDiv.addEventListener("click", () => {
+        console.log("Funciona");
+        container.removeChild(zoomDiv);
+    })
+
+    container.append(zoomDiv);
 }
 
 // -------------------------------------------
