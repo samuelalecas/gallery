@@ -1,11 +1,9 @@
+let carousel;
 let arrayOfImages = ["img1.jpg", "img2.jpg", "img3.jpg"]
 let currentIndex = 0;
 
 let prevBtn = document.getElementById("prev");
 let nextBtn = document.getElementById("next");
-
-let carousel;
-
 
 // FUNCIÓN: Carga de carrousel de imágenes
 function loadCarousel(array) {
@@ -63,14 +61,14 @@ const DIRECTIONS = {
 
 // FUNCIÓN: Desplaza el carrusel
 function moveCarousel(direction) {
-    let valueToMove;
+    let valueToMove = 150;
 
     if (direction === DIRECTIONS.LEFT) {
-        valueToMove = 150;
+        valueToMove;
     }
 
     if (direction === DIRECTIONS.RIGHT) {
-        valueToMove = -150;
+        valueToMove *= -1;
     }
 
     let carouselLeftPos = carousel.offsetLeft;
