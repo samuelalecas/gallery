@@ -92,23 +92,12 @@ function isDisabled(button) {
 }
 
 const DIRECTIONS = {
-    LEFT: Symbol(),
-    RIGHT: Symbol(),
+    LEFT: 1,
+    RIGHT: -1,
 }
 
 // Desplaza el carrusel
 function moveCarousel(direction) {
-    if (direction === DIRECTIONS.LEFT) {
-        displacement(1);
-    }
-
-    if (direction === DIRECTIONS.RIGHT) {
-        displacement(-1);
-    }
-}
-
-// Desplazamiento
-function displacement(direction){
     let currentImage = document.getElementById(currentIndex + direction);
     let followingImage = document.getElementById(currentIndex);
     let displacement = (currentImage.clientWidth / 2) + (followingImage.clientWidth / 2);
