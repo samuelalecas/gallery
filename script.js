@@ -99,22 +99,22 @@ const DIRECTIONS = {
 // Desplaza el carrusel
 function moveCarousel(direction) {
     if (direction === DIRECTIONS.LEFT) {
-        let currentImage = document.getElementById(currentIndex + 1);
-        let prevImage = document.getElementById(currentIndex);
-        let displacement = (currentImage.clientWidth / 2) + (prevImage.clientWidth / 2);
-        currentImage.classList.replace("visible", "hidden");
-        prevImage.classList.replace("hidden", "visible");
-        updateCarouselPosition(displacement);
+        displacement(1);
     }
 
     if (direction === DIRECTIONS.RIGHT) {
-        let currentImage = document.getElementById(currentIndex - 1);
-        let nextImage = document.getElementById(currentIndex);
-        let displacement = (currentImage.clientWidth / 2) + (nextImage.clientWidth / 2);
-        currentImage.classList.replace("visible", "hidden");
-        nextImage.classList.replace("hidden", "visible");
-        updateCarouselPosition(displacement * -1);
+        displacement(-1);
     }
+}
+
+// Desplazamiento
+function displacement(direction){
+    let currentImage = document.getElementById(currentIndex + direction);
+    let followingImage = document.getElementById(currentIndex);
+    let displacement = (currentImage.clientWidth / 2) + (followingImage.clientWidth / 2);
+    currentImage.classList.replace("visible", "hidden");
+    followingImage.classList.replace("hidden", "visible");
+    updateCarouselPosition(displacement * direction);
 }
 
 // -------------------------------------------
