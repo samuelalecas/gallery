@@ -18,7 +18,7 @@ function createCarousel(array) {
         image.setAttribute("id", index);
 
         // Definir estilos de imagenes 
-        if (true){ // index == 0
+        if (index == 0) {
             image.classList.add("visible");
         } else {
             image.classList.add("hidden");
@@ -99,17 +99,21 @@ const DIRECTIONS = {
 // Desplaza el carrusel
 function moveCarousel(direction) {
     if (direction === DIRECTIONS.LEFT) {
-        let currentImage = document.getElementById(currentIndex+1);
+        let currentImage = document.getElementById(currentIndex + 1);
         let prevImage = document.getElementById(currentIndex);
-        let displacement = (currentImage.clientWidth / 2) + (prevImage.clientWidth / 2) 
+        let displacement = (currentImage.clientWidth / 2) + (prevImage.clientWidth / 2);
+        currentImage.classList.replace("visible", "hidden");
+        prevImage.classList.replace("hidden", "visible");
         updateCarouselPosition(displacement);
     }
 
     if (direction === DIRECTIONS.RIGHT) {
-        let currentImage = document.getElementById(currentIndex-1);
+        let currentImage = document.getElementById(currentIndex - 1);
         let nextImage = document.getElementById(currentIndex);
-        let displacement = (currentImage.clientWidth / 2) + (nextImage.clientWidth / 2) 
-        updateCarouselPosition(displacement *-1);
+        let displacement = (currentImage.clientWidth / 2) + (nextImage.clientWidth / 2);
+        currentImage.classList.replace("visible", "hidden");
+        nextImage.classList.replace("hidden", "visible");
+        updateCarouselPosition(displacement * -1);
     }
 }
 

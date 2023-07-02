@@ -16,10 +16,12 @@ body{
 }
 
 .visible{
+    transition: opacity 0.5s ease-in-out;
     opacity: 1;
 }
 
 .hidden{
+    transition: opacity 0.5s ease-in-out;
     opacity: 0;
 }
 
